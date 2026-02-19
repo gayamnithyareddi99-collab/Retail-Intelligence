@@ -77,176 +77,6 @@ nav ul li{
 nav ul li:hover{
   color:var(--secondary);
 }
-
-/* ================= HERO ================= */
-
-.hero{
-  background:linear-gradient(to right, var(--primary), var(--secondary));
-  color:#fff;
-  text-align:center;
-  padding:150px 8%;
-}
-
-.hero h1{
-  font-size:48px;
-  font-weight:900;
-  margin-bottom:20px;
-}
-
-.hero p{
-  max-width:700px;
-  margin:auto;
-  font-size:16px;
-}
-
-.hero button{
-  margin-top:30px;
-  padding:14px 30px;
-  border:none;
-  background:#fff;
-  color:var(--primary);
-  font-weight:700;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.hero button:hover{
-  background:var(--accent);
-  color:#000;
-}
-
-/* ================= SECTION HEADINGS ================= */
-
-.section-title{
-  text-align:center;
-  margin-bottom:60px;
-}
-
-.section-title h2{
-  font-size:34px;
-  font-weight:900;
-  color:var(--primary);
-}
-
-.section-title p{
-  color:var(--muted);
-  max-width:600px;
-  margin:10px auto 0;
-}
-
-/* ================= PROBLEM SOLUTION ================= */
-
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-}
-
-.card{
-  border:1px solid #eee;
-  padding:40px;
-  transition:0.4s;
-  background:#fff;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 50px rgba(0,0,0,0.06);
-}
-
-.card h3{
-  color:var(--primary);
-  margin-bottom:20px;
-}
-
-.card ul{
-  padding-left:20px;
-}
-
-.card li{
-  margin-bottom:10px;
-  font-size:14px;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
-}
-
-.feature-box{
-  padding:35px;
-  border:1px solid #eee;
-  transition:0.3s;
-}
-
-.feature-box:hover{
-  border-color:var(--primary);
-  transform:translateY(-6px);
-}
-
-.feature-box h4{
-  margin-bottom:15px;
-  color:var(--primary);
-}
-
-.feature-box p{
-  font-size:14px;
-  color:var(--muted);
-}
-
-/* ================= MARKET METRICS ================= */
-
-.metrics{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  margin-top:50px;
-}
-
-.metric{
-  flex:1;
-  text-align:center;
-  padding:30px;
-  border:1px solid #eee;
-}
-
-.metric h3{
-  font-size:30px;
-  color:var(--primary);
-}
-
-/* ================= PRICING ================= */
-
-.pricing{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
-}
-
-.price-card{
-  border:2px solid var(--accent);
-  padding:40px;
-  text-align:center;
-  transition:0.3s;
-}
-
-.price-card:hover{
-  background:var(--accent);
-  color:#000;
-}
-
-.price-card h3{
-  margin-bottom:10px;
-}
-
-.price{
-  font-size:30px;
-  margin:15px 0;
-  font-weight:900;
-}
 /* ================= MOBILE ================= */
 
 @media(max-width:900px){
@@ -289,16 +119,19 @@ nav ul li:hover{
     <!-- DESKTOP MENU -->
     <nav class="nav-links" id="navLinks">
       <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#founders">Founders</a>
+      <a href="#process-solutions">Process</a>
       <a href="#platform">Platform</a>
       <a href="#process">Process</a>
       <a href="#pricing">Pricing</a>
-      <a href="#founders">Founders</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact" class="nav-cta">Contact</a>
     </nav>
 
     <!-- MOBILE MENU ICON -->
     <div class="mobile-menu" id="mobileMenu">
-      💼
+      ⚒️
     </div>
 
   </div>
@@ -306,10 +139,13 @@ nav ul li:hover{
   <!-- MOBILE DROPDOWN -->
   <div class="mobile-dropdown" id="mobileDropdown">
       <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#founders">Founders</a>
+      <a href="#process-solutions">Process</a>
       <a href="#platform">Platform</a>
       <a href="#process">Process</a>
       <a href="#pricing">Pricing</a>
-      <a href="#founders">Founders</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
   </div>
 
@@ -826,7 +662,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       <p class="about-text">
         Instead of reacting to stock loss after financial damage occurs,
         our system proactively identifies high-risk inventory patterns,
-        demand inconsistencies, and postcode-level environmental triggers —
+        demand inconsistencies, and postcode-level environmental triggers
         enabling disciplined, forward-looking decision control.
       </p>
 
@@ -1125,7 +961,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
     <p class="founders-intro">
       Retail Intelligence is led by two founders combining operational retail
       execution with structured predictive strategy. Their alignment with
-      UK independent retail realities ensures the platform is built not from theory —
+      UK independent retail realities ensures the platform is built not from theory
       but from lived operational complexity.
     </p>
 
@@ -1146,7 +982,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
 
         <p class="founder-description">
           His background in retail operations and business strategy allows
-          Retail Intelligence to remain commercially grounded —
+          Retail Intelligence to remain commercially grounded
           ensuring every feature directly addresses profitability,
           risk visibility and operational discipline.
         </p>
@@ -1178,7 +1014,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
 
         <p class="founder-description">
           He ensures that Retail Intelligence is engineered not only
-          for insight generation — but for practical execution,
+          for insight generation but for practical execution,
           system reliability and multi-store scalability.
         </p>
 
@@ -1208,7 +1044,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </p>
 
       <p>
-        The result is not a generic analytics platform —
+        The result is not a generic analytics platform
         but a UK-focused retail intelligence engine designed specifically
         to reduce shrinkage volatility, protect margin stability,
         and enable independent retailers to scale with control.
@@ -1399,7 +1235,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
     <div class="pro-process-grid">
 
       <div class="pro-step">
-        <div class="pro-step-number">01</div>
+        <div class="pro-step-number">🍄‍🟫</div>
         <h4>Secure POS Integration</h4>
         <p>
           Connect your existing POS ecosystem without disruption.
@@ -1408,7 +1244,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </div>
 
       <div class="pro-step">
-        <div class="pro-step-number">02</div>
+        <div class="pro-step-number">🍄‍🟫</div>
         <h4>Risk Pattern Identification</h4>
         <p>
           AI models detect shrinkage anomalies, supplier volatility,
@@ -1417,7 +1253,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </div>
 
       <div class="pro-step">
-        <div class="pro-step-number">03</div>
+        <div class="pro-step-number">🍄‍🟫</div>
         <h4>Predictive Forecasting Layer</h4>
         <p>
           SKU-level forecasting, postcode exposure signals
@@ -1426,7 +1262,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </div>
 
       <div class="pro-step">
-        <div class="pro-step-number">04</div>
+        <div class="pro-step-number">🍄‍🟫</div>
         <h4>Actionable Control Signals</h4>
         <p>
           Managers receive clear reorder timing,
@@ -1712,7 +1548,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
     <div class="platform-grid">
 
       <div class="platform-box">
-        <div class="box-number">01</div>
+        <div class="box-number">💼</div>
         <h4>POS System Integration</h4>
         <p>
           Direct API integration with Epos Now, Shopify and Lightspeed.
@@ -1721,7 +1557,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </div>
 
       <div class="platform-box">
-        <div class="box-number">02</div>
+        <div class="box-number">💼</div>
         <h4>Predictive Shrinkage Modelling</h4>
         <p>
           AI-driven anomaly detection identifies SKU-level
@@ -1730,7 +1566,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </div>
 
       <div class="platform-box">
-        <div class="box-number">03</div>
+        <div class="box-number">💼</div>
         <h4>Demand & Risk Forecasting</h4>
         <p>
           Combines demand cycles, postcode signals and supplier
@@ -1739,7 +1575,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </div>
 
       <div class="platform-box">
-        <div class="box-number">04</div>
+        <div class="box-number">💼</div>
         <h4>Retail Risk Index</h4>
         <p>
           Store-level daily risk scoring dashboard designed
@@ -1748,7 +1584,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </div>
 
       <div class="platform-box">
-        <div class="box-number">05</div>
+        <div class="box-number">💼</div>
         <h4>Supplier Optimisation Engine</h4>
         <p>
           Detect supplier pricing volatility and stock risk
@@ -1757,7 +1593,7 @@ document.querySelectorAll(".stat h3").forEach(el=>{
       </div>
 
       <div class="platform-box">
-        <div class="box-number">06</div>
+        <div class="box-number">💼</div>
         <h4>Actionable Decision Framework</h4>
         <p>
           Converts predictive insights into reorder timing,
@@ -2977,7 +2813,7 @@ document.querySelectorAll(".faq-pro-question").forEach(btn=>{
       </button>
 
       <div class="secure-note">
-        Secure • Confidential • No Obligation
+        💼 Secure • Confidential • No Obligation
       </div>
 
     </div>
@@ -3308,10 +3144,13 @@ function openRetailMail(){
 
     <div class="footer-center">
       <div class="footer-links">
-        <a href="#">Platform</a>
-        <a href="#">Market</a>
-        <a href="#">Insights</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#founders">Founders</a>
+      <a href="#process-solutions">Process</a>
+      <a href="#platform">Platform</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
       </div>
     </div>
 
