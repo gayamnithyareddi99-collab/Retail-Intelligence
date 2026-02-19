@@ -1,0 +1,3532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Intelligence | Predictive Shrinkage Platform</title>
+
+<style>
+
+/* ================= ROOT COLORS (WHITE + BROWN THEME) ================= */
+
+:root{
+  --primary:#5a3e2b;      /* Deep Brown */
+  --secondary:#8b5e3c;    /* Light Brown */
+  --accent:#c4a484;       /* Soft Beige */
+  --light:#ffffff;
+  --text:#222;
+  --muted:#666;
+}
+
+/* ================= GLOBAL ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background:#fff;
+  color:var(--text);
+  line-height:1.6;
+}
+
+section{
+  padding:100px 8%;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+  background:var(--light);
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #eee;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-weight:900;
+  font-size:20px;
+  color:var(--primary);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav ul li{
+  font-size:14px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+nav ul li:hover{
+  color:var(--secondary);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  background:linear-gradient(to right, var(--primary), var(--secondary));
+  color:#fff;
+  text-align:center;
+  padding:150px 8%;
+}
+
+.hero h1{
+  font-size:48px;
+  font-weight:900;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:16px;
+}
+
+.hero button{
+  margin-top:30px;
+  padding:14px 30px;
+  border:none;
+  background:#fff;
+  color:var(--primary);
+  font-weight:700;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.hero button:hover{
+  background:var(--accent);
+  color:#000;
+}
+
+/* ================= SECTION HEADINGS ================= */
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:34px;
+  font-weight:900;
+  color:var(--primary);
+}
+
+.section-title p{
+  color:var(--muted);
+  max-width:600px;
+  margin:10px auto 0;
+}
+
+/* ================= PROBLEM SOLUTION ================= */
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+}
+
+.card{
+  border:1px solid #eee;
+  padding:40px;
+  transition:0.4s;
+  background:#fff;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.06);
+}
+
+.card h3{
+  color:var(--primary);
+  margin-bottom:20px;
+}
+
+.card ul{
+  padding-left:20px;
+}
+
+.card li{
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.feature-box{
+  padding:35px;
+  border:1px solid #eee;
+  transition:0.3s;
+}
+
+.feature-box:hover{
+  border-color:var(--primary);
+  transform:translateY(-6px);
+}
+
+.feature-box h4{
+  margin-bottom:15px;
+  color:var(--primary);
+}
+
+.feature-box p{
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* ================= MARKET METRICS ================= */
+
+.metrics{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  margin-top:50px;
+}
+
+.metric{
+  flex:1;
+  text-align:center;
+  padding:30px;
+  border:1px solid #eee;
+}
+
+.metric h3{
+  font-size:30px;
+  color:var(--primary);
+}
+
+/* ================= PRICING ================= */
+
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+}
+
+.price-card{
+  border:2px solid var(--accent);
+  padding:40px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.price-card:hover{
+  background:var(--accent);
+  color:#000;
+}
+
+.price-card h3{
+  margin-bottom:10px;
+}
+
+.price{
+  font-size:30px;
+  margin:15px 0;
+  font-weight:900;
+}
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  section{
+    padding:70px 20px;
+  }
+
+  .hero h1{
+    font-size:28px;
+  }
+
+  .grid-2,
+  .features,
+  .pricing{
+    grid-template-columns:1fr;
+  }
+
+  .metrics{
+    flex-direction:column;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= PREMIUM DARK NAVBAR ================= -->
+<header class="premium-navbar">
+
+  <div class="nav-container">
+
+    <!-- LOGO -->
+    <div class="nav-logo">
+      Retail Intelligence
+    </div>
+
+    <!-- DESKTOP MENU -->
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#platform">Platform</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#founders">Founders</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+
+    <!-- MOBILE MENU ICON -->
+    <div class="mobile-menu" id="mobileMenu">
+      💼
+    </div>
+
+  </div>
+
+  <!-- MOBILE DROPDOWN -->
+  <div class="mobile-dropdown" id="mobileDropdown">
+      <a href="#home">Home</a>
+      <a href="#platform">Platform</a>
+      <a href="#process">Process</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#founders">Founders</a>
+      <a href="#contact">Contact</a>
+  </div>
+
+</header>
+
+<style>
+
+/* ================= NAVBAR BASE ================= */
+
+.premium-navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#2b1b12; /* DARK BROWN */
+  padding:20px 8%;
+  font-family:Arial, sans-serif;
+  z-index:1000;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* LOGO */
+.nav-logo{
+  font-size:20px;
+  font-weight:900;
+  color:#d6b28c;
+  letter-spacing:0.05em;
+}
+
+/* DESKTOP LINKS */
+.nav-links{
+  display:flex;
+  gap:35px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#e8d9cc;
+  font-size:14px;
+  font-weight:600;
+  position:relative;
+  transition:0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:#d6b28c;
+  transition:0.3s ease;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+.nav-links a:hover{
+  color:#d6b28c;
+}
+
+/* CTA BUTTON */
+.nav-cta{
+  background:#d6b28c;
+  color:#2b1b12 !important;
+  padding:8px 18px;
+}
+
+.nav-cta:hover{
+  background:#ffffff;
+}
+
+/* MOBILE ICON */
+.mobile-menu{
+  display:none;
+  font-size:24px;
+  cursor:pointer;
+  color:#d6b28c;
+  transition:0.3s;
+}
+
+.mobile-menu:hover{
+  transform:scale(1.2);
+}
+
+/* MOBILE DROPDOWN */
+.mobile-dropdown{
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  background:#3a2418;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  max-height:0;
+  overflow:hidden;
+  transition:0.4s ease;
+}
+
+.mobile-dropdown a{
+  padding:18px;
+  width:100%;
+  text-align:center;
+  text-decoration:none;
+  color:#e8d9cc;
+  border-top:1px solid #4a2e20;
+  transition:0.3s;
+}
+
+.mobile-dropdown a:hover{
+  background:#2b1b12;
+  color:#d6b28c;
+}
+
+/* ACTIVE MOBILE */
+.mobile-dropdown.active{
+  max-height:500px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .mobile-menu{
+    display:block;
+  }
+
+}
+
+</style>
+
+<script>
+
+/* MOBILE TOGGLE */
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileDropdown = document.getElementById("mobileDropdown");
+
+mobileMenu.addEventListener("click", function(){
+  mobileDropdown.classList.toggle("active");
+});
+
+/* AUTO CLOSE WHEN CLICK LINK */
+document.querySelectorAll(".mobile-dropdown a").forEach(link=>{
+  link.addEventListener("click", function(){
+    mobileDropdown.classList.remove("active");
+  });
+});
+
+</script>
+
+<!-- ================= ULTRA CENTERED PREMIUM HOME ================= -->
+<section class="premium-home-center" id="home">
+
+  <div class="center-container">
+
+    <div class="center-badge">
+      UK RETAIL INTELLIGENCE • PREDICTIVE SaaS
+    </div>
+
+    <h1 class="center-title">
+      Turning Retail Risk Into <br>
+      <span>Structured Profit Intelligence</span>
+    </h1>
+
+    <div class="center-line"></div>
+
+    <p class="center-description">
+      Built for independent UK retailers seeking disciplined control.
+      Our predictive engine transforms POS data, shrinkage patterns,
+      postcode risk signals and demand fluctuations into measurable,
+      forward-looking operational strategy.
+    </p>
+
+    <div class="center-keywords">
+      <span>Predictive Analytics</span>
+      <span>Loss Prevention</span>
+      <span>Multi-Store Visibility</span>
+      <span>Demand Intelligence</span>
+      <span>Risk Forecasting</span>
+    </div>
+
+    <div class="center-buttons">
+      <a href="#contact" class="center-btn primary">
+        Request Executive Session
+      </a>
+      <a href="#platform" class="center-btn secondary">
+        View Platform Capabilities
+      </a>
+    </div>
+
+    <div class="center-stats">
+
+      <div class="stat">
+        <h3 data-count="60">0</h3>
+        <p>Pilot Shrinkage Reduction (%)</p>
+      </div>
+
+      <div class="stat-divider"></div>
+
+      <div class="stat">
+        <h3 data-count="49">0</h3>
+        <p>Independent Retailers (K+)</p>
+      </div>
+
+      <div class="stat-divider"></div>
+
+      <div class="stat">
+        <h3 data-count="7900">0</h3>
+        <p>Annual UK Retail Loss (£M)</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= PREMIUM CENTER HOME ================= */
+
+.premium-home-center{
+  min-height:100vh;
+  padding:160px 8% 120px;
+  background:#f2dfcf;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.center-container{
+  max-width:900px;
+}
+
+/* BADGE */
+.center-badge{
+  font-size:11px;
+  letter-spacing:0.35em;
+  font-weight:700;
+  color:#7a4e2d;
+  margin-bottom:25px;
+}
+
+/* TITLE */
+.center-title{
+  font-size:54px;
+  font-weight:900;
+  line-height:1.2;
+  color:#3a2418;
+  margin-bottom:25px;
+}
+
+.center-title span{
+  color:#8b5e3c;
+  position:relative;
+}
+
+/* underline animation */
+.center-title span::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:100%;
+  height:3px;
+  background:#8b5e3c;
+}
+
+/* LINE */
+.center-line{
+  width:100px;
+  height:3px;
+  background:#8b5e3c;
+  margin:25px auto 35px;
+}
+
+/* DESCRIPTION */
+.center-description{
+  font-size:17px;
+  line-height:1.9;
+  color:#5a3a28;
+  margin-bottom:40px;
+}
+
+/* KEYWORDS ROW */
+.center-keywords{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.05em;
+  color:#7a4e2d;
+  margin-bottom:45px;
+}
+
+.center-keywords span{
+  position:relative;
+}
+
+.center-keywords span::before{
+  content:"•";
+  margin-right:6px;
+  color:#8b5e3c;
+}
+
+/* BUTTONS */
+.center-buttons{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin-bottom:70px;
+}
+
+.center-btn{
+  padding:16px 34px;
+  text-decoration:none;
+  font-weight:800;
+  transition:0.3s ease;
+}
+
+.center-btn.primary{
+  background:#3a2418;
+  color:#fff;
+}
+
+.center-btn.primary:hover{
+  transform:translateY(-5px);
+  background:#000;
+}
+
+.center-btn.secondary{
+  border:2px solid #3a2418;
+  color:#3a2418;
+}
+
+.center-btn.secondary:hover{
+  background:#3a2418;
+  color:#fff;
+}
+
+/* STATS INLINE STYLE */
+.center-stats{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:35px;
+}
+
+.stat{
+  text-align:center;
+}
+
+.stat h3{
+  font-size:32px;
+  color:#3a2418;
+  margin-bottom:6px;
+}
+
+.stat p{
+  font-size:13px;
+  color:#7a4e2d;
+}
+
+.stat-divider{
+  width:1px;
+  height:50px;
+  background:#d2b49c;
+}
+
+/* ================= ADVANCED MOBILE OPTIMIZATION ================= */
+
+@media(max-width:900px){
+
+  .premium-home-center{
+    padding:90px 22px 70px;
+    min-height:auto;
+  }
+
+  .center-container{
+    max-width:100%;
+  }
+
+  .center-badge{
+    font-size:10px;
+    letter-spacing:0.25em;
+    margin-bottom:18px;
+  }
+
+  .center-title{
+    font-size:28px;
+    line-height:1.35;
+    margin-bottom:18px;
+  }
+
+  .center-line{
+    width:70px;
+    margin:18px auto 25px;
+  }
+
+  .center-description{
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:30px;
+    padding:0 5px;
+  }
+
+  .center-keywords{
+    gap:14px;
+    font-size:12px;
+    margin-bottom:35px;
+  }
+
+  .center-keywords span{
+    display:inline-block;
+  }
+
+  .center-buttons{
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:45px;
+  }
+
+  .center-btn{
+    width:100%;
+    padding:15px;
+    font-size:14px;
+  }
+
+  .center-stats{
+    flex-direction:column;
+    gap:22px;
+    margin-top:10px;
+  }
+
+  .stat h3{
+    font-size:26px;
+  }
+
+  .stat p{
+    font-size:12px;
+  }
+
+  .stat-divider{
+    display:none;
+  }
+
+}
+
+</style>
+
+<script>
+
+/* Counter Animation */
+document.querySelectorAll(".stat h3").forEach(el=>{
+  const target = +el.getAttribute("data-count");
+  let count = 0;
+  const step = target / 60;
+
+  function update(){
+    count += step;
+    if(count < target){
+      el.innerText = Math.floor(count);
+      requestAnimationFrame(update);
+    } else {
+      el.innerText = target;
+    }
+  }
+
+  update();
+});
+
+</script>
+<!-- ================= ULTRA EXECUTIVE ABOUT ================= -->
+<section class="about-executive" id="about">
+
+  <div class="about-wrapper">
+
+    <!-- LEFT PANEL -->
+    <div class="about-content">
+
+      <span class="about-label">UK RETAIL INTELLIGENCE PLATFORM</span>
+
+      <h2>
+        Structured Retail Control <br>
+        <span>Engineered for Independent Growth</span>
+      </h2>
+
+      <div class="about-divider"></div>
+
+      <p class="about-text">
+        Retail Intelligence is a UK-focused predictive SaaS platform
+        built to eliminate shrinkage volatility and operational blind spots
+        within independent retail environments.
+      </p>
+
+      <p class="about-text">
+        Instead of reacting to stock loss after financial damage occurs,
+        our system proactively identifies high-risk inventory patterns,
+        demand inconsistencies, and postcode-level environmental triggers —
+        enabling disciplined, forward-looking decision control.
+      </p>
+
+      <!-- STRATEGIC BLOCKS -->
+      <div class="about-strategy-grid">
+
+        <div class="strategy-box">
+          <h4>Predictive Architecture</h4>
+          <p>AI forecasting engine combining POS, crime trends and supply economics.</p>
+        </div>
+
+        <div class="strategy-box">
+          <h4>Retail Risk Index</h4>
+          <p>Daily store-level operational risk scoring dashboard.</p>
+        </div>
+
+        <div class="strategy-box">
+          <h4>Cash-Flow Safe Model</h4>
+          <p>Subscription-first structure designed for SME scalability.</p>
+        </div>
+
+        <div class="strategy-box">
+          <h4>UK Market Alignment</h4>
+          <p>Compliance-ready logic built for British retail environments.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="about-insight-panel">
+
+      <div class="insight-card large">
+        <h3>£7.9B+</h3>
+        <span>Annual UK Retail Shrinkage</span>
+      </div>
+
+      <div class="insight-row">
+        <div class="insight-card small">
+          <h3>49K+</h3>
+          <span>Independent Retailers</span>
+        </div>
+
+        <div class="insight-card small">
+          <h3>60%</h3>
+          <span>Pilot Loss Reduction</span>
+        </div>
+      </div>
+
+      <div class="insight-footer">
+        Transforming fragmented retail data into disciplined
+        operational intelligence infrastructure.
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= SECTION ================= */
+
+.about-executive{
+  background:#2b1b12;
+  padding:150px 8%;
+  font-family:Arial, sans-serif;
+  color:#fff;
+}
+
+/* WRAPPER */
+
+.about-wrapper{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:90px;
+  align-items:center;
+}
+
+/* ================= LEFT CONTENT ================= */
+
+.about-label{
+  font-size:11px;
+  letter-spacing:0.4em;
+  color:#d6b28c;
+  font-weight:700;
+}
+
+.about-content h2{
+  font-size:48px;
+  font-weight:900;
+  margin:24px 0;
+  line-height:1.15;
+}
+
+.about-content h2 span{
+  color:#d6b28c;
+  border-bottom:3px solid #d6b28c;
+}
+
+.about-divider{
+  width:90px;
+  height:3px;
+  background:#d6b28c;
+  margin-bottom:28px;
+}
+
+.about-text{
+  font-size:15px;
+  line-height:1.8;
+  color:#e8d9cc;
+  margin-bottom:18px;
+  max-width:620px;
+}
+
+/* STRATEGY GRID */
+
+.about-strategy-grid{
+  margin-top:35px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.strategy-box{
+  background:#3a2418;
+  padding:22px;
+  border-left:3px solid #d6b28c;
+  transition:0.3s ease;
+}
+
+.strategy-box:hover{
+  transform:translateY(-5px);
+}
+
+.strategy-box h4{
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+.strategy-box p{
+  font-size:13px;
+  color:#d8c2b2;
+}
+
+/* ================= RIGHT PANEL ================= */
+
+.about-insight-panel{
+  background:#fff;
+  padding:45px;
+  border-radius:8px;
+  box-shadow:0 40px 80px rgba(0,0,0,0.35);
+  color:#3a2418;
+}
+
+/* CARDS */
+
+.insight-card{
+  text-align:center;
+  padding:20px;
+  border:1px solid #eee;
+}
+
+.insight-card.large{
+  margin-bottom:25px;
+}
+
+.insight-card.small{
+  flex:1;
+}
+
+.insight-row{
+  display:flex;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.insight-card h3{
+  font-size:28px;
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+.insight-card span{
+  font-size:12px;
+  color:#5a3a28;
+}
+
+.insight-footer{
+  font-size:13px;
+  text-align:center;
+  color:#5a3a28;
+  padding-top:20px;
+  border-top:1px solid #eee;
+}
+
+/* ================= PREMIUM MOBILE OPTIMISATION ================= */
+
+@media(max-width:900px){
+
+  .about-executive{
+    padding:70px 22px;
+  }
+
+  .about-wrapper{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  /* Heading */
+  .about-content h2{
+    font-size:24px;
+    line-height:1.3;
+  }
+
+  .about-label{
+    font-size:10px;
+    letter-spacing:0.25em;
+  }
+
+  .about-divider{
+    width:60px;
+    margin-bottom:22px;
+  }
+
+  .about-text{
+    font-size:14px;
+    line-height:1.7;
+  }
+
+  /* Strategy Boxes */
+  .about-strategy-grid{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .strategy-box{
+    padding:18px;
+  }
+
+  .strategy-box h4{
+    font-size:14px;
+  }
+
+  .strategy-box p{
+    font-size:12.5px;
+  }
+
+  /* Insight Panel */
+  .about-insight-panel{
+    padding:28px 22px;
+  }
+
+  .insight-card.large h3{
+    font-size:22px;
+  }
+
+  .insight-card.small h3{
+    font-size:18px;
+  }
+
+  .insight-card span{
+    font-size:11px;
+  }
+
+  .insight-row{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .insight-footer{
+    font-size:12px;
+  }
+
+}
+
+</style>
+<!-- ================= EXECUTIVE FOUNDERS – STRATEGIC FIT VERSION ================= -->
+<section class="founders-executive" id="founders">
+
+  <div class="founders-wrapper">
+
+    <div class="founders-badge">
+      FOUNDING LEADERSHIP • STRATEGIC RETAIL EXPERTISE
+    </div>
+
+    <h2 class="founders-title">
+      Leadership Designed For <br>
+      <span>Structured UK Retail Intelligence Growth</span>
+    </h2>
+
+    <p class="founders-intro">
+      Retail Intelligence is led by two founders combining operational retail
+      execution with structured predictive strategy. Their alignment with
+      UK independent retail realities ensures the platform is built not from theory —
+      but from lived operational complexity.
+    </p>
+
+    <!-- FOUNDERS GRID -->
+    <div class="founders-grid">
+
+      <!-- FOUNDER 1 -->
+      <div class="founder-card">
+
+        <div class="founder-name">Shreyas Kumar</div>
+        <div class="founder-role">Co-Founder • Retail Strategy & Market Execution</div>
+
+        <p class="founder-description">
+          Shreyas brings direct exposure to UK independent retail environments,
+          understanding the day-to-day pressures of shrinkage volatility,
+          staffing challenges, margin compression and demand uncertainty.
+        </p>
+
+        <p class="founder-description">
+          His background in retail operations and business strategy allows
+          Retail Intelligence to remain commercially grounded —
+          ensuring every feature directly addresses profitability,
+          risk visibility and operational discipline.
+        </p>
+
+        <div class="fit-block">
+          <strong>Strategic Fit For Retail Intelligence:</strong>
+          <ul>
+            <li>Deep understanding of UK independent retail constraints</li>
+            <li>Operational exposure to shrinkage & inventory pressure</li>
+            <li>Market-aligned product positioning & SME growth strategy</li>
+            <li>Commercial focus on predictable ROI delivery</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- FOUNDER 2 -->
+      <div class="founder-card">
+
+        <div class="founder-name">Jeyjode Gowtham</div>
+        <div class="founder-role">Co-Founder • Operational Systems & Intelligence Architecture</div>
+
+        <p class="founder-description">
+          Gowtham contributes structured operational discipline,
+          process optimisation logic and workflow intelligence.
+          His experience across high-volume operational systems
+          directly supports scalable platform design.
+        </p>
+
+        <p class="founder-description">
+          He ensures that Retail Intelligence is engineered not only
+          for insight generation — but for practical execution,
+          system reliability and multi-store scalability.
+        </p>
+
+        <div class="fit-block">
+          <strong>Strategic Fit For Retail Intelligence:</strong>
+          <ul>
+            <li>Structured process design & execution modelling</li>
+            <li>Operational system thinking aligned to retail scale</li>
+            <li>Data-driven decision architecture development</li>
+            <li>Technology-enabled control frameworks for SMEs</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- COMPANY ALIGNMENT -->
+    <div class="founders-alignment">
+
+      <h3>Why This Founding Structure Matters</h3>
+
+      <p>
+        Retail Intelligence operates at the intersection of retail reality
+        and predictive analytics. This dual-founder structure ensures the
+        company remains operationally credible while technologically disciplined.
+      </p>
+
+      <p>
+        The result is not a generic analytics platform —
+        but a UK-focused retail intelligence engine designed specifically
+        to reduce shrinkage volatility, protect margin stability,
+        and enable independent retailers to scale with control.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= SECTION ================= */
+
+.founders-executive{
+  background:#ffffff;
+  padding:130px 8%;
+  font-family:Arial, sans-serif;
+  color:#2b1b12;
+  text-align:center;
+}
+
+.founders-wrapper{
+  max-width:1100px;
+  margin:auto;
+}
+
+/* BADGE */
+.founders-badge{
+  font-size:11px;
+  letter-spacing:0.4em;
+  font-weight:700;
+  color:#8b5e3c;
+  margin-bottom:25px;
+}
+
+/* TITLE */
+.founders-title{
+  font-size:46px;
+  font-weight:900;
+  margin-bottom:25px;
+  line-height:1.2;
+}
+
+.founders-title span{
+  color:#8b5e3c;
+  border-bottom:3px solid #8b5e3c;
+}
+
+/* INTRO */
+.founders-intro{
+  max-width:750px;
+  margin:20px auto 80px;
+  font-size:16px;
+  line-height:1.8;
+  color:#5a3a28;
+}
+
+/* GRID */
+.founders-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:60px;
+  text-align:left;
+}
+
+/* CARD */
+.founder-card{
+  padding:40px;
+  border-left:4px solid #8b5e3c;
+  background:#f9f6f3;
+  transition:0.3s ease;
+}
+
+.founder-card:hover{
+  transform:translateY(-8px);
+}
+
+/* NAME */
+.founder-name{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+/* ROLE */
+.founder-role{
+  font-size:12px;
+  letter-spacing:0.2em;
+  color:#8b5e3c;
+  margin-bottom:20px;
+}
+
+/* DESCRIPTION */
+.founder-description{
+  font-size:14px;
+  line-height:1.8;
+  color:#5a3a28;
+  margin-bottom:15px;
+}
+
+/* FIT BLOCK */
+.fit-block{
+  margin-top:20px;
+  padding-top:15px;
+  border-top:1px solid #ddd;
+}
+
+.fit-block strong{
+  font-size:14px;
+  display:block;
+  margin-bottom:10px;
+}
+
+.fit-block ul{
+  padding-left:18px;
+}
+
+.fit-block li{
+  font-size:13px;
+  margin-bottom:8px;
+  color:#2b1b12;
+}
+
+/* ALIGNMENT SECTION */
+.founders-alignment{
+  margin-top:90px;
+  max-width:800px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.founders-alignment h3{
+  font-size:24px;
+  margin-bottom:20px;
+}
+
+.founders-alignment p{
+  font-size:15px;
+  line-height:1.8;
+  color:#5a3a28;
+  margin-bottom:18px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+  .founders-executive{
+    padding:80px 20px;
+  }
+
+  .founders-title{
+    font-size:28px;
+  }
+
+  .founders-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+}
+
+</style>
+
+<!-- ================= PRO PROCESS & SOLUTIONS SECTION ================= -->
+<section class="pro-structure" id="process-solutions">
+
+  <div class="pro-container">
+
+    <div class="pro-badge">
+      RETAIL EXECUTION FRAMEWORK • STRUCTURED INTELLIGENCE MODEL
+    </div>
+
+    <h2 class="pro-title">
+      From Retail Data Capture To <br>
+      <span>Disciplined Margin Protection</span>
+    </h2>
+
+    <p class="pro-intro">
+      Our structured execution model transforms fragmented retail signals
+      into forward-looking operational control and predictable profitability.
+    </p>
+
+    <!-- ================= PROCESS ================= -->
+    <div class="pro-section-title">Execution Process</div>
+
+    <div class="pro-process-grid">
+
+      <div class="pro-step">
+        <div class="pro-step-number">01</div>
+        <h4>Secure POS Integration</h4>
+        <p>
+          Connect your existing POS ecosystem without disruption.
+          Real-time transaction and inventory data is structured instantly.
+        </p>
+      </div>
+
+      <div class="pro-step">
+        <div class="pro-step-number">02</div>
+        <h4>Risk Pattern Identification</h4>
+        <p>
+          AI models detect shrinkage anomalies, supplier volatility,
+          and demand inconsistencies before losses compound.
+        </p>
+      </div>
+
+      <div class="pro-step">
+        <div class="pro-step-number">03</div>
+        <h4>Predictive Forecasting Layer</h4>
+        <p>
+          SKU-level forecasting, postcode exposure signals
+          and risk scoring dashboards provide structured visibility.
+        </p>
+      </div>
+
+      <div class="pro-step">
+        <div class="pro-step-number">04</div>
+        <h4>Actionable Control Signals</h4>
+        <p>
+          Managers receive clear reorder timing,
+          loss prevention alerts and margin protection guidance.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ================= SOLUTIONS ================= -->
+    <div class="pro-section-title solutions-title">Strategic Solutions</div>
+
+    <div class="pro-solution-grid">
+
+      <div class="pro-solution">
+        <h4>Predict Early</h4>
+        <p>
+          Identify operational risk before financial damage occurs.
+          Reduce reactive firefighting and stabilise performance.
+        </p>
+      </div>
+
+      <div class="pro-solution">
+        <h4>Prevent Shrinkage</h4>
+        <p>
+          Detect SKU-level irregularities and unusual transaction
+          patterns before margin erosion escalates.
+        </p>
+      </div>
+
+      <div class="pro-solution">
+        <h4>Protect Cash Flow</h4>
+        <p>
+          Optimise reordering cycles and reduce overstocking
+          to maintain healthier working capital discipline.
+        </p>
+      </div>
+
+      <div class="pro-solution">
+        <h4>Scale With Control</h4>
+        <p>
+          Multi-store visibility ensures operational discipline
+          as independent retailers expand.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= MAIN SECTION ================= */
+
+.pro-structure{
+  background:#f2dfcf; /* LIGHT BROWN */
+  padding:120px 8%;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  color:#2b1b12;
+}
+
+.pro-container{
+  max-width:1100px;
+  margin:auto;
+}
+
+/* BADGE */
+.pro-badge{
+  font-size:11px;
+  letter-spacing:0.4em;
+  color:#8b5e3c;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+/* TITLE */
+.pro-title{
+  font-size:44px;
+  font-weight:900;
+  margin-bottom:20px;
+  line-height:1.2;
+}
+
+.pro-title span{
+  color:#8b5e3c;
+  border-bottom:3px solid #8b5e3c;
+}
+
+/* INTRO */
+.pro-intro{
+  max-width:720px;
+  margin:20px auto 60px;
+  font-size:16px;
+  line-height:1.8;
+  color:#5a3a28;
+}
+
+/* SECTION LABEL */
+.pro-section-title{
+  font-size:13px;
+  letter-spacing:0.3em;
+  font-weight:700;
+  color:#7a4e2d;
+  margin-bottom:40px;
+  margin-top:40px;
+}
+
+/* ================= PROCESS GRID ================= */
+
+.pro-process-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:35px;
+  margin-bottom:80px;
+}
+
+.pro-step{
+  background:#ffffff;
+  padding:35px;
+  border-left:4px solid #8b5e3c;
+  text-align:left;
+  transition:0.3s ease;
+}
+
+.pro-step:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+.pro-step-number{
+  font-size:12px;
+  font-weight:800;
+  color:#8b5e3c;
+  margin-bottom:12px;
+  letter-spacing:0.15em;
+}
+
+.pro-step h4{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.pro-step p{
+  font-size:14px;
+  line-height:1.7;
+  color:#5a3a28;
+}
+
+/* ================= SOLUTIONS GRID ================= */
+
+.pro-solution-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:35px;
+}
+
+.pro-solution{
+  background:#3a2418;
+  color:#fff;
+  padding:35px;
+  text-align:left;
+  transition:0.3s ease;
+}
+
+.pro-solution:hover{
+  transform:translateY(-6px);
+}
+
+.pro-solution h4{
+  font-size:18px;
+  margin-bottom:12px;
+  color:#d6b28c;
+}
+
+.pro-solution p{
+  font-size:14px;
+  line-height:1.7;
+  color:#e8d9cc;
+}
+
+/* ================= ADVANCED MOBILE OPTIMISATION ================= */
+
+@media(max-width:900px){
+
+  .pro-structure{
+    padding:70px 20px;
+  }
+
+  .pro-badge{
+    font-size:10px;
+    letter-spacing:0.25em;
+    line-height:1.6;
+  }
+
+  .pro-title{
+    font-size:26px;
+    line-height:1.3;
+  }
+
+  .pro-title span{
+    border-bottom:2px solid #8b5e3c;
+  }
+
+  .pro-intro{
+    font-size:14px;
+    margin-bottom:40px;
+  }
+
+  .pro-section-title{
+    font-size:12px;
+    letter-spacing:0.2em;
+    margin:30px 0;
+  }
+
+  /* PROCESS STACK */
+  .pro-process-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+    margin-bottom:50px;
+  }
+
+  .pro-step{
+    padding:25px;
+    border-left:3px solid #8b5e3c;
+  }
+
+  .pro-step h4{
+    font-size:16px;
+  }
+
+  .pro-step p{
+    font-size:13px;
+  }
+
+  /* SOLUTION STACK */
+  .pro-solution-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .pro-solution{
+    padding:25px;
+  }
+
+  .pro-solution h4{
+    font-size:16px;
+  }
+
+  .pro-solution p{
+    font-size:13px;
+  }
+
+}
+
+</style>
+
+<!-- ================= PREMIUM PLATFORM SECTION ================= -->
+<section class="platform-premium" id="platform">
+
+  <div class="platform-container">
+
+    <div class="platform-badge">
+      RETAIL INTELLIGENCE ARCHITECTURE • UK SaaS PLATFORM
+    </div>
+
+    <h2 class="platform-title">
+      Advanced Retail Platform Infrastructure <br>
+      <span>Engineered For Margin Protection & Predictive Control</span>
+    </h2>
+
+    <p class="platform-description">
+      Our structured SaaS intelligence layer integrates with your existing
+      POS ecosystem and transforms raw retail data into disciplined,
+      forward-looking operational decision control.
+    </p>
+
+    <div class="platform-line"></div>
+
+    <!-- GRID -->
+    <div class="platform-grid">
+
+      <div class="platform-box">
+        <div class="box-number">01</div>
+        <h4>POS System Integration</h4>
+        <p>
+          Direct API integration with Epos Now, Shopify and Lightspeed.
+          No hardware dependency. No workflow disruption.
+        </p>
+      </div>
+
+      <div class="platform-box">
+        <div class="box-number">02</div>
+        <h4>Predictive Shrinkage Modelling</h4>
+        <p>
+          AI-driven anomaly detection identifies SKU-level
+          shrinkage risks before financial impact escalates.
+        </p>
+      </div>
+
+      <div class="platform-box">
+        <div class="box-number">03</div>
+        <h4>Demand & Risk Forecasting</h4>
+        <p>
+          Combines demand cycles, postcode signals and supplier
+          volatility into structured forecasting models.
+        </p>
+      </div>
+
+      <div class="platform-box">
+        <div class="box-number">04</div>
+        <h4>Retail Risk Index</h4>
+        <p>
+          Store-level daily risk scoring dashboard designed
+          for disciplined operational control.
+        </p>
+      </div>
+
+      <div class="platform-box">
+        <div class="box-number">05</div>
+        <h4>Supplier Optimisation Engine</h4>
+        <p>
+          Detect supplier pricing volatility and stock risk
+          before margin erosion occurs.
+        </p>
+      </div>
+
+      <div class="platform-box">
+        <div class="box-number">06</div>
+        <h4>Actionable Decision Framework</h4>
+        <p>
+          Converts predictive insights into reorder timing,
+          loss prevention signals and margin protection actions.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= SECTION ================= */
+
+.platform-premium{
+  background:#2b1b12;
+  padding:130px 8%;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  color:#ffffff;
+}
+
+.platform-container{
+  max-width:1150px;
+  margin:auto;
+}
+
+/* BADGE */
+.platform-badge{
+  font-size:11px;
+  letter-spacing:0.4em;
+  color:#d6b28c;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+/* TITLE */
+.platform-title{
+  font-size:46px;
+  font-weight:900;
+  margin-bottom:20px;
+  line-height:1.2;
+}
+
+.platform-title span{
+  color:#d6b28c;
+  border-bottom:3px solid #d6b28c;
+}
+
+/* DESCRIPTION */
+.platform-description{
+  max-width:720px;
+  margin:20px auto 30px;
+  font-size:16px;
+  line-height:1.8;
+  color:#e8d9cc;
+}
+
+/* DIVIDER */
+.platform-line{
+  width:90px;
+  height:3px;
+  background:#d6b28c;
+  margin:30px auto 60px;
+}
+
+/* GRID */
+.platform-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:35px;
+}
+
+/* BOX STYLE */
+.platform-box{
+  background:#e8d9cc;              /* LIGHT BROWN BOX */
+  color:#2b1b12;
+  padding:40px 30px;
+  border:2px solid #c8a98b;        /* BORDER */
+  transition:0.4s ease;
+  text-align:left;
+  position:relative;
+}
+
+/* Hover effect */
+.platform-box:hover{
+  transform:translateY(-8px);
+  border-color:#d6b28c;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* Number */
+.box-number{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:0.2em;
+  color:#8b5e3c;
+  margin-bottom:12px;
+}
+
+/* Heading */
+.platform-box h4{
+  font-size:18px;
+  margin-bottom:12px;
+}
+
+/* Text */
+.platform-box p{
+  font-size:14px;
+  line-height:1.7;
+  color:#5a3a28;
+}
+
+/* ================= ADVANCED MOBILE MODEL ================= */
+
+@media(max-width:900px){
+
+  .platform-premium{
+    padding:90px 22px;
+  }
+
+  .platform-title{
+    font-size:30px;
+    line-height:1.3;
+  }
+
+  .platform-description{
+    font-size:15px;
+    margin-bottom:40px;
+  }
+
+  /* Vertical Timeline Layout */
+  .platform-grid{
+    display:flex;
+    flex-direction:column;
+    gap:35px;
+    position:relative;
+  }
+
+  /* Center vertical line */
+  .platform-grid::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#d6b28c;
+  }
+
+  .platform-box{
+    padding:30px 22px 30px 60px;
+    border-radius:12px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+    border:1px solid #c8a98b;
+    position:relative;
+    text-align:left;
+    transform:none;
+  }
+
+  /* Number circle */
+  .box-number{
+    position:absolute;
+    left:6px;
+    top:28px;
+    width:28px;
+    height:28px;
+    background:#2b1b12;
+    color:#d6b28c;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    font-weight:800;
+    border-radius:50%;
+    border:2px solid #d6b28c;
+    letter-spacing:0;
+  }
+
+  .platform-box h4{
+    font-size:17px;
+  }
+
+  .platform-box p{
+    font-size:14px;
+  }
+
+}
+
+</style>
+<!-- ================= PREMIUM PROCESS SECTION ================= -->
+<section class="process-premium" id="process">
+
+  <div class="process-container">
+
+    <div class="process-badge">
+      STRUCTURED RETAIL EXECUTION MODEL
+    </div>
+
+    <h2 class="process-title">
+      From Raw Retail Data To <br>
+      <span>Actionable Profit Intelligence</span>
+    </h2>
+
+    <div class="process-divider"></div>
+
+    <p class="process-intro">
+      Our four-layer intelligence engine converts POS signals,
+      shrinkage behaviour and demand patterns into disciplined,
+      forward-looking operational decisions.
+    </p>
+
+    <!-- PROCESS STEPS -->
+    <div class="process-grid">
+
+      <!-- STEP 1 -->
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <h4>Data Integration</h4>
+        <p>
+          Connect POS systems and inventory records.
+          Real-time feeds establish structured data flow
+          across single or multi-store environments.
+        </p>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <h4>Risk Detection Engine</h4>
+        <p>
+          AI models identify shrinkage spikes,
+          unusual transaction behaviour and demand
+          inconsistencies before financial impact escalates.
+        </p>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <h4>Predictive Forecasting</h4>
+        <p>
+          The platform forecasts product-level risk,
+          supplier performance signals and postcode
+          level environmental exposure.
+        </p>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <h4>Actionable Control</h4>
+        <p>
+          Retail managers receive structured insights,
+          reorder optimisation signals and prevention alerts
+          to protect margin and stabilise cash flow.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- IMPACT STRIP -->
+    <div class="process-impact">
+
+      <div class="impact-item">
+        <strong>Predict Early</strong>
+        <span>Identify risk before loss occurs</span>
+      </div>
+
+      <div class="impact-line"></div>
+
+      <div class="impact-item">
+        <strong>Prevent Loss</strong>
+        <span>Act before shrinkage compounds</span>
+      </div>
+
+      <div class="impact-line"></div>
+
+      <div class="impact-item">
+        <strong>Protect Margin</strong>
+        <span>Turn insight into disciplined profit control</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= PROCESS SECTION ================= */
+
+.process-premium{
+  background:#ffffff;
+  padding:110px 8%;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  color:#2b1b12;
+}
+
+.process-container{
+  max-width:1100px;
+  margin:auto;
+}
+
+/* BADGE */
+.process-badge{
+  font-size:11px;
+  letter-spacing:0.35em;
+  color:#8b5e3c;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+/* TITLE */
+.process-title{
+  font-size:42px;
+  font-weight:900;
+  margin-bottom:20px;
+  line-height:1.2;
+}
+
+.process-title span{
+  color:#8b5e3c;
+  border-bottom:3px solid #8b5e3c;
+}
+
+/* DIVIDER */
+.process-divider{
+  width:90px;
+  height:3px;
+  background:#8b5e3c;
+  margin:25px auto;
+}
+
+/* INTRO */
+.process-intro{
+  max-width:680px;
+  margin:auto;
+  font-size:15px;
+  line-height:1.8;
+  color:#5a3a28;
+  margin-bottom:70px;
+}
+
+/* GRID */
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  margin-bottom:70px;
+}
+
+/* STEP */
+.process-step{
+  padding:30px 20px;
+  border-top:3px solid #8b5e3c;
+  transition:0.3s ease;
+}
+
+.process-step:hover{
+  transform:translateY(-6px);
+}
+
+/* NUMBER */
+.step-number{
+  font-size:14px;
+  font-weight:800;
+  color:#8b5e3c;
+  margin-bottom:10px;
+  letter-spacing:0.1em;
+}
+
+/* TITLE */
+.process-step h4{
+  font-size:16px;
+  margin-bottom:12px;
+}
+
+/* TEXT */
+.process-step p{
+  font-size:14px;
+  line-height:1.7;
+  color:#5a3a28;
+}
+
+/* IMPACT STRIP */
+.process-impact{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:25px;
+  border-top:1px solid #eee;
+  padding-top:35px;
+}
+
+.impact-item{
+  text-align:center;
+}
+
+.impact-item strong{
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.impact-item span{
+  font-size:13px;
+  color:#8b5e3c;
+}
+
+.impact-line{
+  width:1px;
+  height:40px;
+  background:#ddd;
+}
+
+/* ================= ADVANCED MOBILE OPTIMISATION ================= */
+
+@media(max-width:900px){
+
+  .process-premium{
+    padding:70px 22px;
+  }
+
+  .process-container{
+    width:100%;
+  }
+
+  /* Badge */
+  .process-badge{
+    font-size:10px;
+    letter-spacing:0.25em;
+    line-height:1.6;
+  }
+
+  /* Title */
+  .process-title{
+    font-size:28px;
+    line-height:1.3;
+    margin-bottom:15px;
+  }
+
+  .process-title span{
+    border-bottom:2px solid #8b5e3c;
+  }
+
+  /* Divider */
+  .process-divider{
+    margin:20px auto 25px;
+  }
+
+  /* Intro */
+  .process-intro{
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:45px;
+  }
+
+  /* Grid */
+  .process-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  /* Step Card */
+  .process-step{
+    padding:22px 0;
+    border-top:2px solid #8b5e3c;
+  }
+
+  .step-number{
+    font-size:13px;
+    margin-bottom:8px;
+  }
+
+  .process-step h4{
+    font-size:15px;
+    margin-bottom:10px;
+  }
+
+  .process-step p{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  /* Impact Strip */
+  .process-impact{
+    flex-direction:column;
+    gap:25px;
+    padding-top:30px;
+  }
+
+  .impact-item strong{
+    font-size:14px;
+  }
+
+  .impact-item span{
+    font-size:12px;
+  }
+
+  .impact-line{
+    display:none;
+  }
+
+}
+
+</style>
+<!-- ================= ULTRA PREMIUM PRICING – EXECUTIVE VERSION ================= -->
+<section class="pricing-ultra" id="pricing">
+
+  <div class="pricing-container">
+
+    <div class="pricing-badge">
+      UK INDEPENDENT RETAIL SaaS • STRUCTURED SUBSCRIPTION MODEL • PROFIT CONTROL FRAMEWORK
+    </div>
+
+    <h2 class="pricing-title">
+      Transparent Pricing Architecture <br>
+      <span>Designed For Predictable Retail ROI</span>
+    </h2>
+
+    <h3 class="pricing-subtitle">
+      Subscription Intelligence Built For Independent UK Retailers Seeking
+      <strong>Disciplined Growth, Margin Protection & Operational Stability</strong>
+    </h3>
+
+    <p class="pricing-micro">
+      No Hardware Lock-In • No Hidden Costs • No Complex Integration  
+      Just Structured Retail Intelligence That Pays For Itself.
+    </p>
+
+    <div class="pricing-line"></div>
+
+    <!-- PRICING CARDS -->
+    <div class="pricing-grid">
+
+      <!-- STANDARD -->
+      <div class="price-card">
+        <div class="plan-name">STANDARD</div>
+        <div class="plan-price">£49<span>/month</span></div>
+
+        <ul class="plan-features">
+          <li>Real-time inventory visibility dashboard</li>
+          <li>Shrinkage anomaly detection alerts</li>
+          <li>Automated reordering suggestions</li>
+          <li>Single-store intelligence reporting</li>
+          <li>POS integration (Epos Now, Lightspeed, Shopify)</li>
+        </ul>
+
+        <div class="roi-box">
+          Average Pilot Savings: <strong>£650/month</strong>
+        </div>
+
+        <button onclick="goContact()">Get Started</button>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="price-card highlight">
+        <div class="recommended">Most Popular</div>
+        <div class="plan-name">PREMIUM</div>
+        <div class="plan-price">£99<span>/month</span></div>
+
+        <ul class="plan-features">
+          <li>Multi-store centralised dashboard</li>
+          <li>Predictive anomaly intelligence engine</li>
+          <li>Supplier optimisation & pricing signals</li>
+          <li>Community benchmarking network</li>
+          <li>Advanced shrinkage forecasting suite</li>
+        </ul>
+
+        <div class="roi-box">
+          Average Pilot Savings: <strong>£780/month</strong>
+        </div>
+
+        <button onclick="goContact()">Upgrade to Premium</button>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="price-card">
+        <div class="plan-name">ENTERPRISE</div>
+        <div class="plan-price">£199<span>/month</span></div>
+
+        <ul class="plan-features">
+          <li>2–10 Store Consolidation Framework</li>
+          <li>Full predictive analytics & modelling suite</li>
+          <li>Priority intelligence support</li>
+          <li>Custom predictive configuration</li>
+          <li>Multi-location risk scoring architecture</li>
+        </ul>
+
+        <div class="roi-box">
+          Average Multi-Store Savings: <strong>£1,950/month</strong>
+        </div>
+
+        <button onclick="goContact()">Contact Enterprise Team</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= SECTION ================= */
+
+.pricing-ultra{
+  background:#2b1b12;
+  padding:150px 8%;
+  font-family:Arial, sans-serif;
+  color:#fff;
+  text-align:center;
+}
+
+.pricing-container{
+  max-width:1150px;
+  margin:auto;
+}
+
+/* BADGE */
+.pricing-badge{
+  font-size:11px;
+  letter-spacing:0.4em;
+  color:#d6b28c;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+/* MAIN TITLE */
+.pricing-title{
+  font-size:52px;
+  font-weight:900;
+  margin-bottom:20px;
+  line-height:1.2;
+}
+
+.pricing-title span{
+  color:#d6b28c;
+  border-bottom:3px solid #d6b28c;
+}
+
+/* SUBTITLE */
+.pricing-subtitle{
+  font-size:22px;
+  font-weight:600;
+  margin-top:15px;
+  color:#e8d9cc;
+  line-height:1.6;
+}
+
+.pricing-subtitle strong{
+  color:#d6b28c;
+}
+
+/* MICRO TEXT */
+.pricing-micro{
+  font-size:14px;
+  margin-top:15px;
+  color:#c8b2a3;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+
+/* LINE */
+.pricing-line{
+  width:90px;
+  height:3px;
+  background:#d6b28c;
+  margin:30px auto 60px;
+}
+
+/* GRID */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:35px;
+}
+
+/* CARD */
+.price-card{
+  background:#3a2418;
+  padding:45px 35px;
+  border:1px solid #5a3a28;
+  position:relative;
+  transition:0.4s ease;
+}
+
+.price-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.4);
+}
+
+.price-card.highlight{
+  border:2px solid #d6b28c;
+}
+
+.recommended{
+  position:absolute;
+  top:-15px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#d6b28c;
+  color:#2b1b12;
+  padding:5px 15px;
+  font-size:11px;
+  font-weight:700;
+}
+
+.plan-name{
+  font-size:14px;
+  letter-spacing:0.2em;
+  margin-bottom:12px;
+}
+
+.plan-price{
+  font-size:38px;
+  font-weight:900;
+  margin-bottom:25px;
+}
+
+.plan-price span{
+  font-size:14px;
+  font-weight:400;
+  color:#e8d9cc;
+}
+
+.plan-features{
+  list-style:none;
+  padding:0;
+  margin:0 0 30px;
+  text-align:left;
+}
+
+.plan-features li{
+  margin-bottom:10px;
+  font-size:14px;
+  color:#e8d9cc;
+}
+
+.roi-box{
+  background:#2b1b12;
+  padding:12px;
+  font-size:13px;
+  margin-bottom:25px;
+  border-left:3px solid #d6b28c;
+}
+
+button{
+  background:#d6b28c;
+  border:none;
+  padding:14px 20px;
+  font-weight:800;
+  cursor:pointer;
+  width:100%;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#fff;
+}
+
+/* ================= ADVANCED MOBILE OPTIMISATION ================= */
+
+@media(max-width:900px){
+
+  .pricing-ultra{
+    padding:70px 20px;
+  }
+
+  .pricing-container{
+    width:100%;
+  }
+
+  /* Badge */
+  .pricing-badge{
+    font-size:10px;
+    letter-spacing:0.25em;
+    line-height:1.6;
+  }
+
+  /* Title */
+  .pricing-title{
+    font-size:28px;
+    line-height:1.3;
+    margin-bottom:15px;
+  }
+
+  .pricing-title span{
+    border-bottom:2px solid #d6b28c;
+  }
+
+  /* Subtitle */
+  .pricing-subtitle{
+    font-size:15px;
+    line-height:1.6;
+    margin-top:10px;
+  }
+
+  /* Micro text */
+  .pricing-micro{
+    font-size:11px;
+    letter-spacing:0.05em;
+    margin-top:12px;
+  }
+
+  .pricing-line{
+    margin:25px auto 40px;
+  }
+
+  /* Grid */
+  .pricing-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  /* Card */
+  .price-card{
+    padding:30px 22px;
+  }
+
+  .plan-price{
+    font-size:30px;
+  }
+
+  .plan-features{
+    text-align:left;
+  }
+
+  .plan-features li{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  /* ROI box */
+  .roi-box{
+    font-size:12px;
+    padding:10px;
+  }
+
+  /* Button */
+  button{
+    padding:16px;
+    font-size:14px;
+  }
+
+  /* Recommended badge fix */
+  .recommended{
+    top:-12px;
+    font-size:10px;
+    padding:4px 12px;
+  }
+
+}
+</style>
+
+<script>
+function goContact(){
+  document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+</script>
+<!-- ================= ULTRA PRO FAQ ================= -->
+<section class="retail-faq-pro" id="faq">
+
+  <div class="faq-pro-wrapper">
+
+    <!-- HEADER -->
+    <div class="faq-pro-header">
+
+      <span class="faq-pro-tag">UK RETAIL INTELLIGENCE • ENTERPRISE SUPPORT</span>
+
+      <h2 class="faq-pro-title">
+        Retail Intelligence <span>FAQ</span><br>
+        Executive Clarifications for Growth-Focused Retailers
+      </h2>
+
+      <div class="faq-pro-line"></div>
+
+      <p class="faq-pro-sub">
+        Clear answers for independent UK retailers exploring predictive
+        shrinkage analytics, POS integration, and scalable SaaS deployment.
+      </p>
+
+    </div>
+
+    <!-- FAQ ITEMS -->
+    <div class="faq-pro-container">
+
+      <!-- 1 -->
+      <div class="faq-pro-item">
+        <div class="faq-pro-question">
+          <h4>01. How is this different from traditional POS reporting?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-pro-answer">
+          Traditional POS systems show past sales data. Retail Intelligence
+          acts as a predictive layer that analyses risk signals, SKU behaviour,
+          delivery timing, and store patterns to forecast shrinkage before
+          financial impact occurs.
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="faq-pro-item">
+        <div class="faq-pro-question">
+          <h4>02. Does the platform require hardware installation?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-pro-answer">
+          No hardware, no cameras, and no surveillance systems.
+          It is a secure SaaS intelligence platform that integrates
+          directly with your existing POS infrastructure.
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="faq-pro-item">
+        <div class="faq-pro-question">
+          <h4>03. How quickly can retailers see measurable ROI?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-pro-answer">
+          Most pilot stores identify shrinkage anomalies within the first
+          30–45 days. Early-stage detection significantly reduces stock loss
+          and improves operational margin.
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="faq-pro-item">
+        <div class="faq-pro-question">
+          <h4>04. Is this suitable for single-store retailers?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-pro-answer">
+          Yes. The dashboard is designed for 1–10 store operations.
+          The system prioritises clarity, simplicity, and actionable
+          intelligence without requiring technical expertise.
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="faq-pro-item">
+        <div class="faq-pro-question">
+          <h4>05. How secure is the platform?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-pro-answer">
+          Enterprise-grade encrypted cloud hosting ensures
+          compliance with UK data regulations. No customer
+          surveillance or sensitive identity tracking is used.
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="faq-pro-item">
+        <div class="faq-pro-question">
+          <h4>06. Can it scale with multi-store expansion?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-pro-answer">
+          Yes. The architecture supports centralised multi-store
+          dashboards, comparative risk analytics, and
+          performance benchmarking across locations.
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="faq-pro-item">
+        <div class="faq-pro-question">
+          <h4>07. What makes this ideal for UK independent retailers?</h4>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-pro-answer">
+          The platform was designed specifically for UK SME retailers
+          facing rising theft, margin pressure, and operational blind spots.
+          It provides predictive control without enterprise-level cost.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= SECTION ================= */
+
+.retail-faq-pro{
+  background:linear-gradient(135deg,#f5e7da,#e8d8c9);
+  padding:130px 8%;
+  font-family:Arial, sans-serif;
+  color:#3a2418;
+}
+
+.faq-pro-wrapper{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+.faq-pro-header{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.faq-pro-tag{
+  font-size:11px;
+  letter-spacing:0.4em;
+  color:#8a5a3b;
+  font-weight:700;
+}
+
+.faq-pro-title{
+  font-size:40px;
+  font-weight:900;
+  margin:20px 0;
+  line-height:1.2;
+}
+
+.faq-pro-title span{
+  border-bottom:3px solid #3a2418;
+}
+
+.faq-pro-line{
+  width:100px;
+  height:3px;
+  background:#3a2418;
+  margin:20px auto;
+  position:relative;
+  overflow:hidden;
+}
+
+.faq-pro-line::after{
+  content:"";
+  position:absolute;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,#fff,transparent);
+  animation:shineLine 5s infinite;
+}
+
+@keyframes shineLine{
+  100%{ left:150%; }
+}
+
+.faq-pro-sub{
+  max-width:650px;
+  margin:auto;
+  font-size:15px;
+  line-height:1.6;
+  color:#5a3a28;
+}
+
+/* ================= FAQ ITEMS ================= */
+
+.faq-pro-container{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.faq-pro-item{
+  background:#fff;
+  border-left:5px solid #d6b28c;
+  border-radius:6px;
+  overflow:hidden;
+  box-shadow:0 10px 35px rgba(0,0,0,0.08);
+  transition:0.3s ease;
+}
+
+.faq-pro-item:hover{
+  transform:translateY(-4px);
+}
+
+.faq-pro-question{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 28px;
+  cursor:pointer;
+}
+
+.faq-pro-question h4{
+  font-size:16px;
+  font-weight:800;
+}
+
+.faq-icon{
+  font-size:22px;
+  font-weight:900;
+  transition:0.3s ease;
+}
+
+.faq-pro-answer{
+  max-height:0;
+  overflow:hidden;
+  padding:0 28px;
+  font-size:14px;
+  line-height:1.6;
+  color:#5a3a28;
+  transition:0.4s ease;
+}
+
+.faq-pro-item.active .faq-pro-answer{
+  max-height:220px;
+  padding:0 28px 25px;
+}
+
+.faq-pro-item.active .faq-icon{
+  transform:rotate(45deg);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  .retail-faq-pro{
+    padding:70px 20px;
+  }
+
+  .faq-pro-title{
+    font-size:24px;
+  }
+
+  .faq-pro-question h4{
+    font-size:14px;
+  }
+
+  .faq-pro-answer{
+    font-size:13px;
+  }
+
+}
+
+</style>
+
+<script>
+
+/* AUTO CLOSE OTHER FAQ */
+
+document.querySelectorAll(".faq-pro-question").forEach(btn=>{
+  btn.addEventListener("click", function(){
+
+    const currentItem = this.parentElement;
+
+    document.querySelectorAll(".faq-pro-item").forEach(item=>{
+      if(item !== currentItem){
+        item.classList.remove("active");
+      }
+    });
+
+    currentItem.classList.toggle("active");
+
+  });
+});
+
+</script>
+<!-- ================= ULTRA PREMIUM RETAIL CONTACT ================= -->
+<section class="retail-contact" id="contact">
+
+  <div class="retail-overlay"></div>
+
+  <div class="retail-container">
+
+    <!-- LEFT -->
+    <div class="retail-left">
+
+      <span class="retail-tag">ENTERPRISE RETAIL INTELLIGENCE</span>
+
+      <h2>
+        Turn Retail Risk Into <br>
+        <span>Predictable Profit Control</span>
+      </h2>
+
+      <div class="retail-line"></div>
+
+      <p>
+        Transform operational blind spots into structured intelligence.
+        Our platform converts retail store data into measurable
+        performance and shrinkage control strategy.
+      </p>
+
+      <ul class="retail-points">
+        <li>AI-driven shrinkage detection</li>
+        <li>Multi-store intelligence visibility</li>
+        <li>Predictive loss-prevention analytics</li>
+      </ul>
+
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="retail-card">
+
+      <div class="card-accent-line"></div>
+      <div class="corner-top"></div>
+      <div class="corner-bottom"></div>
+
+      <h3>Executive Strategy Consultation</h3>
+
+      <p>
+        Schedule a confidential strategy session to explore
+        retail intelligence deployment for your organisation.
+      </p>
+
+      <button class="retail-btn" onclick="openRetailMail()">
+        Request Consultation →
+      </button>
+
+      <div class="secure-note">
+        Secure • Confidential • No Obligation
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+/* ================= SECTION ================= */
+
+.retail-contact{
+  position:relative;
+  background:linear-gradient(135deg,#3a2418,#1a0f0a);
+  padding:140px 8%;
+  font-family:Arial, sans-serif;
+  color:#fff;
+  overflow:hidden;
+}
+
+/* Moving soft glow background */
+.retail-overlay{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 20% 30%, rgba(214,178,140,0.08), transparent 60%);
+  animation:glowMove 6s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove{
+  from{ transform:translateX(-30px); }
+  to{ transform:translateX(30px); }
+}
+
+/* CONTAINER */
+.retail-container{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:80px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+/* LEFT SIDE */
+.retail-tag{
+  font-size:11px;
+  letter-spacing:0.4em;
+  color:#d6b28c;
+  font-weight:700;
+}
+
+.retail-left h2{
+  font-size:46px;
+  font-weight:900;
+  margin:22px 0;
+  line-height:1.2;
+}
+
+.retail-left h2 span{
+  color:#d6b28c;
+  border-bottom:3px solid #d6b28c;
+}
+
+.retail-line{
+  width:90px;
+  height:3px;
+  background:#d6b28c;
+  margin-bottom:25px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* animated shine line */
+.retail-line::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,#fff,transparent);
+  animation:lineShine 4s infinite;
+}
+
+@keyframes lineShine{
+  100%{ left:150%; }
+}
+
+.retail-left p{
+  font-size:15px;
+  line-height:1.7;
+  color:#e8d9cc;
+  margin-bottom:25px;
+}
+
+.retail-points{
+  list-style:none;
+  padding:0;
+}
+
+.retail-points li{
+  margin-bottom:12px;
+  padding-left:22px;
+  position:relative;
+}
+
+.retail-points li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+  width:8px;
+  height:8px;
+  background:#d6b28c;
+  border-radius:50%;
+}
+
+/* RIGHT CARD */
+.retail-card{
+  background:#fff;
+  color:#3a2418;
+  padding:55px 45px;
+  border-radius:6px;
+  position:relative;
+  box-shadow:0 30px 70px rgba(0,0,0,0.35);
+  transition:0.4s ease;
+}
+
+.retail-card:hover{
+  transform:translateY(-10px);
+}
+
+/* animated top accent line */
+.card-accent-line{
+  position:absolute;
+  top:0;
+  left:0;
+  width:0%;
+  height:4px;
+  background:#3a2418;
+  transition:0.6s ease;
+}
+
+.retail-card:hover .card-accent-line{
+  width:100%;
+}
+
+/* decorative corners */
+.corner-top,
+.corner-bottom{
+  position:absolute;
+  width:25px;
+  height:25px;
+  border:2px solid #d6b28c;
+}
+
+.corner-top{
+  top:12px;
+  right:12px;
+  border-left:none;
+  border-bottom:none;
+}
+
+.corner-bottom{
+  bottom:12px;
+  left:12px;
+  border-right:none;
+  border-top:none;
+}
+
+.retail-card h3{
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.retail-card p{
+  font-size:14px;
+  color:#5a3a28;
+  margin-bottom:30px;
+  line-height:1.6;
+}
+
+/* BUTTON */
+.retail-btn{
+  width:100%;
+  padding:16px;
+  background:#3a2418;
+  color:#fff;
+  border:none;
+  font-weight:800;
+  cursor:pointer;
+  transition:0.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* pulse ring */
+.retail-btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:1px solid #fff;
+  opacity:0.15;
+  animation:pulseRing 3s infinite;
+}
+
+@keyframes pulseRing{
+  0%{opacity:0.15;}
+  50%{opacity:0.4;}
+  100%{opacity:0.15;}
+}
+
+.retail-btn:hover{
+  background:#000;
+  transform:translateY(-4px);
+}
+
+.secure-note{
+  margin-top:18px;
+  font-size:11px;
+  text-align:center;
+  color:#888;
+}
+
+/* ================= MOBILE OPTIMIZED ================= */
+@media (max-width: 900px) {
+
+  .retail-contact{
+    padding:70px 20px;
+  }
+
+  .retail-overlay{
+    animation:none; /* stop heavy animation on mobile */
+  }
+
+  .retail-container{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+
+  .retail-left{
+    text-align:left;
+  }
+
+  .retail-tag{
+    font-size:10px;
+    letter-spacing:0.25em;
+  }
+
+  .retail-left h2{
+    font-size:26px;
+    line-height:1.3;
+  }
+
+  .retail-line{
+    width:60px;
+    margin-bottom:20px;
+  }
+
+  .retail-left p{
+    font-size:14px;
+  }
+
+  .retail-points li{
+    font-size:13px;
+  }
+
+  .retail-card{
+    padding:30px 22px;
+    border-radius:10px;
+  }
+
+  .retail-card h3{
+    font-size:18px;
+  }
+
+  .retail-card p{
+    font-size:13px;
+    margin-bottom:25px;
+  }
+
+  .retail-btn{
+    padding:14px;
+    font-size:14px;
+  }
+
+  .secure-note{
+    font-size:10px;
+  }
+
+}
+
+</style>
+
+<script>
+
+function openRetailMail(){
+  const subject = "Retail Intelligence Consultation Request";
+  const body =
+  "Hello,%0D%0A%0D%0A" +
+  "I would like to schedule a consultation regarding Retail Intelligence.%0D%0A%0D%0A" +
+  "Company Name:%0D%0A" +
+  "Number of Stores:%0D%0A" +
+  "Primary Risk Area:%0D%0A%0D%0A" +
+  "Preferred Schedule:%0D%0A%0D%0A" +
+  "Regards,";
+
+  window.location.href =
+  "mailto:info@yourcompany.com?subject=" + subject + "&body=" + body;
+}
+
+</script>
+<!-- ================= PREMIUM RETAIL FOOTER ================= -->
+<footer class="retail-footer">
+
+  <div class="footer-container">
+
+    <div class="footer-left">
+      <h3>Retail Intelligence</h3>
+      <p>
+        Predictive SaaS platform engineered for UK retail
+        performance optimisation and shrinkage control.
+      </p>
+    </div>
+
+    <div class="footer-center">
+      <div class="footer-links">
+        <a href="#">Platform</a>
+        <a href="#">Market</a>
+        <a href="#">Insights</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-badge">
+        Enterprise Grade • Secure • Scalable
+      </div>
+      <div class="footer-copy">
+        © 2026 Retail Intelligence
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+<style>
+
+/* ================= FOOTER SECTION ================= */
+
+.retail-footer{
+  background:linear-gradient(135deg,#e8d8c9,#d6b28c);
+  padding:60px 8%;
+  font-family:Arial, sans-serif;
+  position:relative;
+  overflow:hidden;
+}
+
+/* subtle floating shine */
+.retail-footer::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  animation:footerShine 6s infinite;
+}
+
+@keyframes footerShine{
+  100%{ left:150%; }
+}
+
+/* CONTAINER */
+.footer-container{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:40px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+/* LEFT */
+.footer-left h3{
+  font-size:20px;
+  margin-bottom:12px;
+  color:#3a2418;
+}
+
+.footer-left p{
+  font-size:14px;
+  color:#5a3a28;
+  line-height:1.6;
+}
+
+/* CENTER LINKS */
+.footer-links{
+  display:flex;
+  gap:25px;
+  justify-content:center;
+}
+
+.footer-links a{
+  text-decoration:none;
+  font-size:14px;
+  color:#3a2418;
+  font-weight:600;
+  position:relative;
+  transition:0.3s ease;
+}
+
+/* underline animation */
+.footer-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0%;
+  height:2px;
+  background:#3a2418;
+  transition:0.3s ease;
+}
+
+.footer-links a:hover::after{
+  width:100%;
+}
+
+/* RIGHT */
+.footer-badge{
+  font-size:12px;
+  color:#3a2418;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+.footer-copy{
+  font-size:13px;
+  color:#5a3a28;
+}
+
+/* ================= ULTRA PREMIUM MOBILE FOOTER ================= */
+
+@media(max-width:900px){
+
+  .retail-footer{
+    padding:60px 22px;
+    border-top:1px solid rgba(58,36,24,0.15);
+  }
+
+  .footer-container{
+    grid-template-columns:1fr;
+    gap:35px;
+    text-align:center;
+  }
+
+  /* Logo Section */
+  .footer-left h3{
+    font-size:20px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+  }
+
+  .footer-left p{
+    font-size:13px;
+    line-height:1.7;
+    max-width:320px;
+    margin:0 auto;
+    opacity:0.85;
+  }
+
+  /* Links become premium vertical buttons */
+  .footer-links{
+    flex-direction:column;
+    gap:16px;
+  }
+
+  .footer-links a{
+    padding:10px 0;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.5px;
+    transition:0.3s ease;
+    position:relative;
+  }
+
+  /* Smooth underline grow */
+  .footer-links a::after{
+    content:"";
+    position:absolute;
+    bottom:-3px;
+    left:50%;
+    transform:translateX(-50%);
+    width:0%;
+    height:2px;
+    background:#3a2418;
+    transition:0.4s ease;
+  }
+
+  .footer-links a:hover::after{
+    width:60%;
+  }
+
+  /* Badge styling */
+  .footer-badge{
+    font-size:11px;
+    letter-spacing:1px;
+    padding:8px 15px;
+    display:inline-block;
+    background:rgba(58,36,24,0.08);
+    border-radius:30px;
+  }
+
+  /* Copy text */
+  .footer-copy{
+    font-size:12px;
+    margin-top:10px;
+    opacity:0.7;
+  }
+
+  /* Smooth fade-in animation */
+  .footer-container{
+    opacity:0;
+    transform:translateY(30px);
+    animation:footerFade 1s ease forwards;
+  }
+
+  @keyframes footerFade{
+    to{
+      opacity:1;
+      transform:translateY(0);
+    }
+  }
+
+}
+
+</style>
+
+</body>
+</html>
